@@ -37,10 +37,12 @@ const userSchema = new mongoose.Schema({
         ref:"Profile",
      },
 
-     courses:{
+     courses:[
+      {
         type:mongoose.Schema.Types.ObjectId,
         ref:"Course",
-     },
+     }
+   ],
 
      image:{
         type:String,

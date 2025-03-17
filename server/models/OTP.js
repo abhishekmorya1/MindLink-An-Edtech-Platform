@@ -19,7 +19,7 @@ const OTPSchema = new mongoose.Schema({
      }
 });
 
-// a function create kr lete hai jiska kaam hai to send emails
+// a function creation to send email 
 
 async function sendVerificationEmail(email, otp){
     try{
@@ -39,4 +39,4 @@ OTPSchema.pre("Save", async function(next){
     next();
 })
 
-module.exports = mongoose.model("Course",OTPSchema);
+module.exports = mongoose.model("OTP",OTPSchema);
