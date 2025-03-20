@@ -7,7 +7,7 @@ exports.resetPasswordToken = async(req,res) =>{
    try{
       // get email from request body
     const email = request.body.email;
-    // check user for this mail or validation on mail ki user exist krta hai
+    // check user for this mail or validation on mail that user is exist or not
     const user=await User.findOne({email:email});
     if(!user){
         return res.json({

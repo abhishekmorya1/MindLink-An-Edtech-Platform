@@ -38,7 +38,7 @@ exports.sendOTP= async(req,res)=>{
 
     // check unique otp or not
 
-    const result=await OTP.findOne({otp: otp});
+    let result=await OTP.findOne({otp: otp});
 
     while(result){
         otp=otpGenerator.generate(6,{
@@ -97,7 +97,7 @@ exports.signUp= async (req,res)=>{
     } = req.body;
 
     // validate kr lo
-      if(!firstName || !lastName || !email || !password || !confirmPassword || !otp){
+      if(!firstName || !lastName || !email || !password || !confirmPassword || !otp || !contactNumber){
         return res.status(403).json({
             success:false,
             message:"All fields are required",
@@ -248,14 +248,70 @@ exports.login()=async(req,res)=>{
     }
 };
 
-// change Password
-exports.changePassword = async(req,res)=>{
-    // get data from req body
-    // get oldpassword, newpassword, confirm password
-    // validation
 
-    // update password in db
-    // send mail -password updated
-    // return response
-}
 
+
+// Controller for Changing Password
+exports.changePassword = async (req, res) => {
+    try {
+      // Get user data from req.user
+      const userDetails = await User.findById(req.user.id)
+  
+      // Get old password, new password, and confirm new password from req.body
+      const { oldPassword, newPassword } = req.body
+  
+      // Validate old password
+      const isPasswordMatch = await bcrypt.compare(
+        oldPassword,
+        userDetails.password
+      )
+      if (!isPasswordMatch) {
+        // If old password does not match, return a 401 (Unauthorized) error
+        return res
+          .status(401)
+          .json({ success: false, message: "The password is incorrect" })
+      }
+  
+      // Update password
+      const encryptedPassword = await bcrypt.hash(newPassword, 10)
+      const updatedUserDetails = await User.findByIdAndUpdate(
+        req.user.id,
+        { password: encryptedPassword },
+        { new: true }
+      )
+  
+      // Send notification email
+      try {
+        const emailResponse = await mailSender(
+          updatedUserDetails.email,
+          "Password for your account has been updated",
+          passwordUpdated(
+            updatedUserDetails.email,
+            `Password updated successfully for ${updatedUserDetails.firstName} ${updatedUserDetails.lastName}`
+          )
+        )
+        console.log("Email sent successfully:", emailResponse.response)
+      } catch (error) {
+        // If there's an error sending the email, log the error and return a 500 (Internal Server Error) error
+        console.error("Error occurred while sending email:", error)
+        return res.status(500).json({
+          success: false,
+          message: "Error occurred while sending email",
+          error: error.message,
+        })
+      }
+  
+      // Return success response
+      return res
+        .status(200)
+        .json({ success: true, message: "Password updated successfully" })
+    } catch (error) {
+      // If there's an error updating the password, log the error and return a 500 (Internal Server Error) error
+      console.error("Error occurred while updating password:", error)
+      return res.status(500).json({
+        success: false,
+        message: "Error occurred while updating password",
+        error: error.message,
+      })
+    }
+  }
