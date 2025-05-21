@@ -1,7 +1,6 @@
 const Section = require("../models/Section")
 const Course = require("../models/Course")
-// const SubSection = require("../models/Subsection")
-
+const SubSection = require("../models/Subsection")
 // CREATE a new section
 exports.createSection = async (req, res) => {
   try {
@@ -38,14 +37,14 @@ exports.createSection = async (req, res) => {
       .exec()
 
     // Return the updated course object in the response
-   return  res.status(200).json({
+    res.status(200).json({
       success: true,
       message: "Section created successfully",
       updatedCourse,
     })
   } catch (error) {
     // Handle errors
-    return res.status(500).json({
+    res.status(500).json({
       success: false,
       message: "Internal server error",
       error: error.message,
@@ -57,19 +56,10 @@ exports.createSection = async (req, res) => {
 exports.updateSection = async (req, res) => {
   try {
     const { sectionName, sectionId, courseId } = req.body
-
-    // Validate the input
-    if (!sectionName || !sectionId) {
-        return res.status(400).json({
-          success: false,
-          message: "Missing required properties",
-        })
-      }
-    //   update the data
     const section = await Section.findByIdAndUpdate(
       sectionId,
       { sectionName },
-      { new: true },
+      { new: true }
     )
     const course = await Course.findById(courseId)
       .populate({
@@ -80,8 +70,7 @@ exports.updateSection = async (req, res) => {
       })
       .exec()
     console.log(course)
-    
-    return res.status(200).json({
+    res.status(200).json({
       success: true,
       message: section,
       data: course,
@@ -117,8 +106,6 @@ exports.deleteSection = async (req, res) => {
     await SubSection.deleteMany({ _id: { $in: section.subSection } })
 
     await Section.findByIdAndDelete(sectionId)
-
-    // todo(in testing)- do we need to delete the entry from the course schema?
 
     // find the updated course and return it
     const course = await Course.findById(courseId)
