@@ -1,16 +1,16 @@
 {
-	"name": "studynotion-backend",
+	"name": "MindLink-backend",
 	"version": "1.0.0",
-	"description": "studynotion-backend",
+	"description": "MindLink-backend",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
 		"dev": "nodemon index.js"
 	},
 	"keywords": [
-		"studynotion-backend"
+		"mindlink-backend"
 	],
-	"author": "Saikat Mukherjee",
+	"author": "Abhishek Morya",
 	"license": "ISC",
 	"dependencies": {
 		"bcrypt": "^5.1.0",

@@ -67,7 +67,7 @@ exports.paymentSuccessEmail = (name, amount, orderId, paymentId) => {
     
     <body>
         <div class="container">
-            <a href="https://mind-link-an-edtech-platform.vercel.app"><img class="logo" src="https://i.ibb.co/7Xyj3PC/logo.png"
+            <a href="https://mind-link-an-edtech-platform.vercel.app"><img class="logo" src="https://mind-link-an-edtech-platform.vercel.app/rzp_logo.png"
                     alt="MindLink Logo"></a>
             <div class="message">Course Payment Confirmation</div>
             <div class="body">

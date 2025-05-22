@@ -75,7 +75,7 @@ exports.contactUsEmail = (
   <body>
       <div class="container">
           <a href="https://mind-link-an-edtech-platform.vercel.app"><img class="logo"
-                  src="https://i.ibb.co/7Xyj3PC/Logo-Full-Light.png" alt="MindLink Logo"></a>
+                  src="https://mind-link-an-edtech-platform.vercel.app/rzp_logo.png" alt="MindLink Logo"></a>
           <div class="message">Contact Form Confirmation</div>
           <div class="body">
               <p>Dear ${firstname} ${lastname},</p>
