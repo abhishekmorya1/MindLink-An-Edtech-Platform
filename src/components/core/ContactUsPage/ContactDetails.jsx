@@ -8,20 +8,20 @@ const contactDetails = [
     icon: "HiChatBubbleLeftRight",
     heading: "Chat on us",
     description: "Our friendly team is here to help.",
-    details: "info@studynotion.com",
+    details: "mindlink1512@gmail.com",
   },
   {
     icon: "BiWorld",
     heading: "Visit us",
-    description: "Come and say hello at our office HQ.",
+    description: "Come and say hello at our office .",
     details:
-      "Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016",
+      "Abhishek Morya -  Jawahar Colony, Faridabad, 121005",
   },
   {
     icon: "IoCall",
     heading: "Call us",
     description: "Mon - Fri From 8am to 5pm",
-    details: "+123 456 7869",
+    details: "8700241164",
   },
 ]
 

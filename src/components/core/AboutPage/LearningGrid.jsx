@@ -8,7 +8,7 @@ const LearningGridArray = [
     heading: "World-Class Learning for",
     highliteText: "Anyone, Anywhere",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
+      "MindLink partners with more than 275+ leading universities and companies to bring flexible, affordable, job-relevant online learning to individuals and organizations worldwide.",
     BtnText: "Learn More",
     BtnLink: "/",
   },
@@ -16,31 +16,31 @@ const LearningGridArray = [
     order: 1,
     heading: "Curriculum Based on Industry Needs",
     description:
-      "Save time and money! The Belajar curriculum is made to be easier to understand and in line with industry needs.",
+      "Our courses are developed in partnership with leading companies to ensure you learn skills that are in high demand in today’s job market.",
   },
   {
     order: 2,
-    heading: "Our Learning Methods",
+    heading: "Innovative Learning Methods",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Experience engaging content through videos, quizzes, and interactive projects designed to boost your understanding and retention.",
   },
   {
     order: 3,
     heading: "Certification",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Receive verified certificates upon course completion that can enhance your resume and help you stand out to employers.",
   },
   {
     order: 4,
-    heading: `Rating "Auto-grading"`,
+    heading: `Auto-Grading & Instant Feedback`,
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Our system instantly evaluates your assignments and quizzes, providing real-time feedback to accelerate your learning progress.",
   },
   {
     order: 5,
     heading: "Ready to Work",
     description:
-      "Studynotion partners with more than 275+ leading universities and companies to bring",
+      "Gain practical experience through hands-on projects and connect with industry mentors to prepare for your future career.",
   },
 ];
 

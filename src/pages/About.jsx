@@ -1,11 +1,11 @@
 import React from "react"
 
 import FoundingStory from "../assets/Images/FoundingStory.png"
-import BannerImage1 from "../assets/Images/aboutus1.webp"
-import BannerImage2 from "../assets/Images/aboutus2.webp"
-import BannerImage3 from "../assets/Images/aboutus3.webp"
+import BannerImage1 from "../assets/Images/aboutus1.png"
+import BannerImage2 from "../assets/Images/aboutus2.png"
+import BannerImage3 from "../assets/Images/aboutus3.png"
 import Footer from "../components/Common/Footer"
-import ReviewSlider from "../components/Common/ReviewSlider"
+// import ReviewSlider from "../components/Common/ReviewSlider"
 import ContactFormSection from "../components/core/AboutPage/ContactFormSection"
 import LearningGrid from "../components/core/AboutPage/LearningGrid"
 import Quote from "../components/core/AboutPage/Quote"
@@ -18,13 +18,13 @@ const About = () => {
       <section className="bg-richblack-700">
         <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-center text-white">
           <header className="mx-auto py-20 text-4xl font-semibold lg:w-[70%]">
-            Driving Innovation in Online Education for a
-            <HighlightText text={"Brighter Future"} />
+           Reimagining Online Learning for a 
+            <HighlightText text={"Smarter Tomorrow"} />
             <p className="mx-auto mt-3 text-center text-base font-medium text-richblack-300 lg:w-[95%]">
-              Studynotion is at the forefront of driving innovation in online
-              education. We're passionate about creating a brighter future by
-              offering cutting-edge courses, leveraging emerging technologies,
-              and nurturing a vibrant learning community.
+              MindLink is transforming online education by delivering innovative,
+               future-ready courses that harness the power of emerging technologies. 
+               Our mission is to empower learners through high-quality content and foster a
+                thriving community where curiosity, collaboration, and growth flourish
             </p>
           </header>
           <div className="sm:h-[70px] lg:h-[150px]"></div>
@@ -51,11 +51,7 @@ const About = () => {
                 Our Founding Story
               </h1>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
-                Our e-learning platform was born out of a shared vision and
-                passion for transforming education. It all began with a group of
-                educators, technologists, and lifelong learners who recognized
-                the need for accessible, flexible, and high-quality learning
-                opportunities in a rapidly evolving digital world.
+                At the heart of our mission lies a commitment to transform how knowledge is shared and absorbed. Born from the collaboration of visionary educators, tech pioneers, and lifelong learners, we strive to break down barriers to quality education by harnessing the power of digital innovation. Our platform empowers learners everywhere to access flexible, inclusive, and meaningful learning experiences that adapt to today’s dynamic world.
               </p>
               <p className="text-base font-medium text-richblack-300 lg:w-[95%]">
                 As experienced educators ourselves, we witnessed firsthand the
@@ -110,10 +106,10 @@ const About = () => {
 
       <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white">
         {/* Reviws from Other Learner */}
-        <h1 className="text-center text-4xl font-semibold mt-8">
+        {/* <h1 className="text-center text-4xl font-semibold mt-8">
           Reviews from other learners
         </h1>
-        <ReviewSlider />
+        <ReviewSlider /> */}
       </div>
       <Footer />
     </div>
